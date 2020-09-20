@@ -6,6 +6,5 @@ Algorithms to implement:
 - Insertion Sort
 - Quick Sort
 - Merge Sort
-- Insertion Sort
 - Heap Sort
 - Bucket Sort
