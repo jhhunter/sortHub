@@ -1,8 +1,7 @@
 package UnitTests;
 
 import Runner.SortingObject;
-import SortingAlgorithms.BubbleSort;
-import SortingAlgorithms.Sort;
+import SortingAlgorithms.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -62,11 +61,159 @@ public class tests {
     }
 
     /**
-     *
+     * Test that bubble sort accurately sorts the array of n integers
      */
     @Test
     public void testBubbleSort() {
-        
+        Sort bubble_sorter = new BubbleSort();
+        int[] obj1_test = bubble_sorter.sort(obj1.getUnsortedArray());
+        int[] obj2_test = bubble_sorter.sort(obj2.getUnsortedArray());
+        int[] obj3_test = bubble_sorter.sort(obj3.getUnsortedArray());
+
+        for(int i = 0; i < 10000; i++) {
+            if(i < 100) {
+                assertEquals(obj1.getSortedArray()[i], obj1_test[i]);
+                assertEquals(obj2.getSortedArray()[i], obj2_test[i]);
+                assertEquals(obj3.getSortedArray()[i], obj3_test[i]);
+            }
+            else if(i < 1000) {
+                assertEquals(obj2.getSortedArray()[i], obj2_test[i]);
+                assertEquals(obj3.getSortedArray()[i], obj3_test[i]);
+            }
+            else {
+                assertEquals(obj3.getSortedArray()[i], obj3_test[i]);
+            }
+        }
+    }
+
+    /**
+     * Test that Quick sort accurately sorts the array of n integers
+     */
+    @Test
+    public void testQuickSort() {
+        Sort quick_sorter = new QuickSort();
+        int[] obj1_test = quick_sorter.sort(obj1.getUnsortedArray());
+        int[] obj2_test = quick_sorter.sort(obj2.getUnsortedArray());
+        int[] obj3_test = quick_sorter.sort(obj3.getUnsortedArray());
+
+        for(int i = 0; i < 10000; i++) {
+            if(i < 100) {
+                assertEquals(obj1.getSortedArray()[i], obj1_test[i]);
+                assertEquals(obj2.getSortedArray()[i], obj2_test[i]);
+                assertEquals(obj3.getSortedArray()[i], obj3_test[i]);
+            }
+            else if(i < 1000) {
+                assertEquals(obj2.getSortedArray()[i], obj2_test[i]);
+                assertEquals(obj3.getSortedArray()[i], obj3_test[i]);
+            }
+            else {
+                assertEquals(obj3.getSortedArray()[i], obj3_test[i]);
+            }
+        }
+    }
+
+    /**
+     * Test that Merge sort accurately sorts the array of n integers
+     */
+    @Test
+    public void testMergeSort() {
+        Sort merge_sorter = new MergeSort();
+        int[] obj1_test = merge_sorter.sort(obj1.getUnsortedArray());
+        int[] obj2_test = merge_sorter.sort(obj2.getUnsortedArray());
+        int[] obj3_test = merge_sorter.sort(obj3.getUnsortedArray());
+
+        for(int i = 0; i < 10000; i++) {
+            if(i < 100) {
+                assertEquals(obj1.getSortedArray()[i], obj1_test[i]);
+                assertEquals(obj2.getSortedArray()[i], obj2_test[i]);
+                assertEquals(obj3.getSortedArray()[i], obj3_test[i]);
+            }
+            else if(i < 1000) {
+                assertEquals(obj2.getSortedArray()[i], obj2_test[i]);
+                assertEquals(obj3.getSortedArray()[i], obj3_test[i]);
+            }
+            else {
+                assertEquals(obj3.getSortedArray()[i], obj3_test[i]);
+            }
+        }
+    }
+
+    /**
+     * Test that Insertion sort accurately sorts the array of n integers
+     */
+    @Test
+    public void testInsertionSort() {
+        Sort insert_sorter = new InsertionSort();
+        int[] obj1_test = insert_sorter.sort(obj1.getUnsortedArray());
+        int[] obj2_test = insert_sorter.sort(obj2.getUnsortedArray());
+        int[] obj3_test = insert_sorter.sort(obj3.getUnsortedArray());
+
+        for(int i = 0; i < 10000; i++) {
+            if(i < 100) {
+                assertEquals(obj1.getSortedArray()[i], obj1_test[i]);
+                assertEquals(obj2.getSortedArray()[i], obj2_test[i]);
+                assertEquals(obj3.getSortedArray()[i], obj3_test[i]);
+            }
+            else if(i < 1000) {
+                assertEquals(obj2.getSortedArray()[i], obj2_test[i]);
+                assertEquals(obj3.getSortedArray()[i], obj3_test[i]);
+            }
+            else {
+                assertEquals(obj3.getSortedArray()[i], obj3_test[i]);
+            }
+        }
+    }
+
+    /**
+     * Test that Bucket sort accurately sorts the array of n integers
+     */
+    @Test
+    public void testBucketSort() {
+        Sort bucket_sorter = new BucketSort();
+        int[] obj1_test = bucket_sorter.sort(obj1.getUnsortedArray());
+        int[] obj2_test = bucket_sorter.sort(obj2.getUnsortedArray());
+        int[] obj3_test = bucket_sorter.sort(obj3.getUnsortedArray());
+
+        for(int i = 0; i < 10000; i++) {
+            if(i < 100) {
+                assertEquals(obj1.getSortedArray()[i], obj1_test[i]);
+                assertEquals(obj2.getSortedArray()[i], obj2_test[i]);
+                assertEquals(obj3.getSortedArray()[i], obj3_test[i]);
+            }
+            else if(i < 1000) {
+                assertEquals(obj2.getSortedArray()[i], obj2_test[i]);
+                assertEquals(obj3.getSortedArray()[i], obj3_test[i]);
+            }
+            else {
+                assertEquals(obj3.getSortedArray()[i], obj3_test[i]);
+            }
+        }
+    }
+
+    /**
+     * Test that Heap sort accurately sorts the array of n integers
+     */
+    @Test
+    public void testHeapSort() {
+        Sort heap_sorter = new HeapSort();
+        int[] obj1_test = heap_sorter.sort(obj1.getUnsortedArray());
+        int[] obj2_test = heap_sorter.sort(obj2.getUnsortedArray());
+        int[] obj3_test = heap_sorter.sort(obj3.getUnsortedArray());
+
+        for(int i = 0; i < 10000; i++) {
+            if(i < 100) {
+                assertEquals(obj1.getSortedArray()[i], obj1_test[i]);
+                assertEquals(obj2.getSortedArray()[i], obj2_test[i]);
+                assertEquals(obj3.getSortedArray()[i], obj3_test[i]);
+            }
+            else if(i < 1000) {
+                assertEquals(obj2.getSortedArray()[i], obj2_test[i]);
+                assertEquals(obj3.getSortedArray()[i], obj3_test[i]);
+            }
+            else {
+                assertEquals(obj3.getSortedArray()[i], obj3_test[i]);
+            }
+        }
     }
 
 }

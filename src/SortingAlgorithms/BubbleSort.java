@@ -11,7 +11,7 @@ public class BubbleSort extends Sort {
         for(int i = 0; i < n; i++) {
             for(int j = 0; j < (n-1); j++) {
                 if(sorted_list[j] > sorted_list[j+1]) {
-                    
+                    swapped = true;
                 }
             }
         }
