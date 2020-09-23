@@ -84,6 +84,8 @@ public class tests {
                 assertEquals(obj3.getSortedArray()[i], obj3_test[i]);
             }
         }
+        System.out.println("BubbleSort Test Passed!");
+
     }
 
     /**
@@ -110,6 +112,7 @@ public class tests {
                 assertEquals(obj3.getSortedArray()[i], obj3_test[i]);
             }
         }
+        System.out.println("QuickSort Test Passed!");
     }
 
     /**
@@ -136,6 +139,7 @@ public class tests {
                 assertEquals(obj3.getSortedArray()[i], obj3_test[i]);
             }
         }
+        System.out.println("MergeSort Test Passed!");
     }
 
     /**
@@ -162,6 +166,7 @@ public class tests {
                 assertEquals(obj3.getSortedArray()[i], obj3_test[i]);
             }
         }
+        System.out.println("InsertionSort Test Passed!");
     }
 
     /**
@@ -188,6 +193,7 @@ public class tests {
                 assertEquals(obj3.getSortedArray()[i], obj3_test[i]);
             }
         }
+        System.out.println("BucketSort Test Passed!");
     }
 
     /**
@@ -214,6 +220,7 @@ public class tests {
                 assertEquals(obj3.getSortedArray()[i], obj3_test[i]);
             }
         }
+        System.out.println("HeapSort Test Passed!");
     }
 
 }
