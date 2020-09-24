@@ -16,7 +16,7 @@ public class InsertionSort extends Sort {
      */
     @Override
     public int[] sort(final int[] unsorted_list) {
-        int[] sorted_list = unsorted_list;
+        int[] sorted_list = unsorted_list.clone();
         for(int i = 1; i < unsorted_list.length; i++) {
             int sort_val = sorted_list[i];
             int j = i -1;

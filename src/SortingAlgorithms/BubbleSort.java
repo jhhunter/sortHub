@@ -17,7 +17,7 @@ public class BubbleSort extends Sort {
     @Override
     public int[] sort(final int[] unsorted_list) {
         int n = unsorted_list.length;
-        int[] sorted_list = unsorted_list;
+        int[] sorted_list = unsorted_list.clone();
         boolean swapped = false;
 
         for(int i = 0; i < n; i++) {
@@ -28,6 +28,9 @@ public class BubbleSort extends Sort {
                     sorted_list[j+1] = sorted_list[j];
                     sorted_list[j] = old_val;
                 }
+            }
+            if(!swapped) {
+                break;
             }
         }
         return sorted_list;
