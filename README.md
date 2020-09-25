@@ -2,7 +2,6 @@
 A collection of sorting algorithms and a visualization of the time it takes to complete them
 
 Algorithms to implement:
-- Quick Sort
 - Merge Sort
 - Heap Sort
 - Bucket Sort
@@ -10,3 +9,4 @@ Algorithms to implement:
 Implemented Algorithms:
 - Bubble Sort
 - Insertion Sort
+- Quick Sort

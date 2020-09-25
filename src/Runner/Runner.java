@@ -2,6 +2,7 @@ package Runner;
 
 import SortingAlgorithms.BubbleSort;
 import SortingAlgorithms.InsertionSort;
+import SortingAlgorithms.QuickSort;
 import SortingAlgorithms.Sort;
 
 import java.util.Scanner;
@@ -35,6 +36,18 @@ public class Runner {
             dis *= -1;
         }
         System.out.println("InsertionSort: " + dis + " seconds");
+
+        //Calculate the time insertion sort takes
+        start = System.nanoTime();
+        sort = new QuickSort();
+        sort.sort(toBeSorted.getUnsortedArray());
+        end = System.nanoTime();
+        long qs = end-start;
+        double dqs = qs / 1000000000.0;
+        if(dqs < 0) {
+            dqs *= -1;
+        }
+        System.out.println("QuickSort: " + dqs + " seconds");
     }
 
 }
