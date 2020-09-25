@@ -18,7 +18,9 @@ public class Runner {
         Sort sort = new BubbleSort();
         sort.sort(toBeSorted.getUnsortedArray());
         long end = System.nanoTime();
+        //Runtime in nanoseconds
         long bbs = end-start;
+        //Conversion to seconds
         double dbbs = bbs / 1000000000.0;
         if(dbbs < 0) {
             dbbs *= -1;
@@ -30,19 +32,23 @@ public class Runner {
         sort = new InsertionSort();
         sort.sort(toBeSorted.getUnsortedArray());
         end = System.nanoTime();
+        //Runtime in nanoseconds
         long is = end-start;
+        //Conversion to seconds
         double dis = is / 1000000000.0;
         if(dis < 0) {
             dis *= -1;
         }
         System.out.println("InsertionSort: " + dis + " seconds");
 
-        //Calculate the time insertion sort takes
+        //Calculate the time quick sort takes
         start = System.nanoTime();
         sort = new QuickSort();
         sort.sort(toBeSorted.getUnsortedArray());
         end = System.nanoTime();
+        //Runtime in nanoseconds
         long qs = end-start;
+        //Conversion to seconds
         double dqs = qs / 1000000000.0;
         if(dqs < 0) {
             dqs *= -1;
