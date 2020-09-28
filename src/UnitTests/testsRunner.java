@@ -11,6 +11,5 @@ public class testsRunner {
             System.out.println(f.toString());
         }
         System.out.println(result.wasSuccessful());
-
     }
 }

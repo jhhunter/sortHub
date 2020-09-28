@@ -3,47 +3,74 @@ package SortingAlgorithms;
 public class MergeSort extends Sort {
 
     int[] array;
-    
+
+    /**
+     * Implementation of MergeSort
+     *
+     * Average Performance: O(nlogn)
+     *
+     * An efficient algorithm that divides the array of elements recursively into
+     * multiple list. When the list is fully divided, each recursive layer is
+     * merged together in order so that each layer going back up is 2 ordered
+     * lists. Largest downside to this algorithm is the spatial complexity due to
+     * each layer getting temporary arrays.
+     * @param unsorted_list The unsorted list of elements
+     * @return A sorted array from smallest to largest
+     */
     @Override
     public int[] sort(int[] unsorted_list) {
         array = unsorted_list.clone();
-        mergesort(new int[array.length], 0, array.length - 1);
-        return super.sort(unsorted_list);
+        mergeSort(0, array.length-1);
+        return array;
     }
 
-    private void mergesort(int[] temp, int left, int right) {
+    private void mergeSort(int left, int right) {
         if(left >= right) {
             return;
         }
         int mid = (left + right) / 2;
-        mergesort(temp, left, mid);
-        mergesort(temp, mid + 1, right);
-        mergehalves(temp, left, right);
+        mergeSort(left, mid);
+        mergeSort(mid + 1, right);
+        merge(left, mid, right);
     }
 
-    private void mergehalves(int[] temp, int leftStart, int rightEnd) {
-        int leftEnd = (rightEnd + leftStart) / 2;
-        int rightStart = leftEnd + 1;
-        int size = rightEnd - leftStart + 1;
+    private void merge(int leftStart, int middle, int rightEnd) {
+        int n1 = (middle - leftStart) + 1;
+        int n2 = (rightEnd - middle);
 
-        int left = leftStart;
-        int right = rightStart;
-        int index = leftStart;
+        int[] leftTemp = new int[n1];
+        int[] rightTemp = new int[n2];
+        for(int i = 0; i < n1; i++) {
+            leftTemp[i] = array[leftStart + i];
+        }
+        for(int i = 0; i < n2; i++) {
+            rightTemp[i] = array[(middle + 1) + i];
+        }
 
-        while(left <= leftEnd && right <= rightEnd) {
-            if(array[left] <= array[right]) {
-                temp[index] = array[left];
+        int left = 0, right = 0;
+        int arrayIndex = leftStart;
+        while(left < n1 && right < n2) {
+            if(leftTemp[left] <= rightTemp[right]) {
+                array[arrayIndex] = leftTemp[left];
                 left+=1;
             }
             else {
-                temp[index] = array[right];
+                array[arrayIndex] = rightTemp[right];
                 right+=1;
             }
-            index+=1;
+            arrayIndex+=1;
         }
 
-        System.arraycopy(array, left, temp, index, leftEnd - left + 1);
-        System.arraycopy(array, right, temp, index, rightEnd - right + 1);
-        System.arraycopy(temp, leftStart, array, leftStart, size);
+        while(left < n1) {
+            array[arrayIndex] = leftTemp[left];
+            left+=1;
+            arrayIndex+=1;
+        }
+        while(right < n2) {
+            array[arrayIndex] = rightTemp[right];
+            right+=1;
+            arrayIndex+=1;
+        }
     }
+
 }
